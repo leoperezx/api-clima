@@ -1,9 +1,9 @@
 # Mi primer servidor
 
-Mi primer servidor es un proyecto de iniciación en el mundo de nodejs para mi y es mi inicio de un proyecto personal 
+Mi primer servidor es un proyecto de iniciación en el mundo de nodejs para mi y es mi proyecto personal 
 para ir escalando en el universo de la programación.
 
-## Istalación
+## Instalación
 
 1. Clonar el repositorio. 
 `$ git clone https://github.com/leoperezx/mi-primer-server`
@@ -23,4 +23,4 @@ para ir escalando en el universo de la programación.
 6. Abril el navegador y poner en la dirección:
 `localhost:3000/`
 
-`@leoperez`
+Autor: [LeoPerez](https://www.instagram.com/leoperez.x/)
