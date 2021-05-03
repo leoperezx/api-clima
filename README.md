@@ -1,15 +1,15 @@
-# Mi primer servidor
+# Mi primera API
 
-Mi primer servidor es un proyecto de iniciación en el mundo de nodejs para mi y es mi proyecto personal 
-para ir escalando en el universo de la programación.
+Después de realizar "mi primer servidor", con ayuda @nosoycesaros realizamos un proyecto para hacer un llamadao a una 
+API que entrega información del clima de Medellín y esa información la plasmamos. 
 
 ## Instalación
 
 1. Clonar el repositorio. 
-`$ git clone https://github.com/leoperezx/mi-primer-server`
+`$ git clone https://github.com/leoperezx/api-clima.git`
 
 2. Ingresar a la capeta.
-`$ cd mi-primer-server`
+`$ cd api-clima`
 
 3. Instalar  las dependencias del proyecto utizando npm.
 `$ npm install`
@@ -23,4 +23,4 @@ para ir escalando en el universo de la programación.
 6. Abril el navegador y poner en la dirección:
 `localhost:3000/`
 
-Autor: [LeoPerez](https://www.instagram.com/leoperez.x/)
+Autor: [LeoPerez](https://www.instagram.com/leoperez.x/) and [nosoycesaros](https://github.com/nosoycesaros)
