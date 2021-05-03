@@ -1,7 +1,8 @@
 # Mi primera API
 
-Después de realizar "mi primer servidor", con ayuda @nosoycesaros realizamos un proyecto para hacer un llamadao a una 
-API que entrega información del clima de Medellín y esa información la plasmamos. 
+Después de realizar "mi primer servidor", con ayuda @nosoycesaros realizamos un proyecto para hacer un llamado a una 
+API que entrega información del clima de Medellín y esa información la plasmamos. Este proyecto esta en todavía en 
+desarrollo por lo que habrán cambios.
 
 ## Instalación
 
