@@ -1,6 +1,7 @@
 
 async function getClima() {
-  const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Medellín&appid=77fcf95a5a97ef3c12ad9e0a4dafb08d")
+  const api_key = '77fcf95a5a97ef3c12ad9e0a4dafb08d'
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Medellín&appid=${api_key}`)
   const data = await response.json()
 
   return data
