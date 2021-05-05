@@ -1,11 +1,10 @@
 body {
   font-family: sans-serif;
   background: #5e696cff;
-  color: #FFF;
+  color: #fff;
 }
 
-.greetings {
+.title {
   text-align: center;
   margin-top: 100px;
 }
-
