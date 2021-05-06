@@ -1,25 +1,25 @@
-function getmonth() {
-  const date = new Date();
+const dateObj = new Date();
 
+function getmonth(date) {
   const hora = date.getHours();
   const dia = date.getDate();
   const mes = date.toLocaleString("es-co", { month: "long" });
   const ano = date.getFullYear();
-  return { hora, dia, mes, ano };
+  return [hora, dia, mes, ano];
 }
 
 function saludo() {
-  const info = getmonth();
+  const [hour, day, month, year] = getmonth(dateObj);
 
   let mensajeDiaTardeNoche;
 
-  if (info.hora < 13) {
+  if (hour < 13) {
     mensajeDiaTardeNoche = "Buenos días";
     styleName = "mañana";
-  } else if (info.hora < 19) {
+  } else if (hour < 19) {
     mensajeDiaTardeNoche = "Buenas tardes";
     styleName = "tarde";
-  } else if (info.hora < 24) {
+  } else if (hour < 24) {
     mensajeDiaTardeNoche = "Buenas noches";
     styleName = "noche";
   }
@@ -27,7 +27,7 @@ function saludo() {
   document.querySelector(".greetings").innerText = mensajeDiaTardeNoche;
   document.querySelector(
     ".greetingWithDate"
-  ).innerText = `Hoy es ${info.dia} de ${info.mes} de ${info.ano}`;
+  ).innerText = `Hoy es ${day} de ${month} de ${year}`;
   document.body.className = styleName;
 }
 
