@@ -9,12 +9,17 @@ body {
   margin-top: 100px;
 }
 
-.mañana {
+.output {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.morning {
   background: #b9933f;
 }
-.tarde {
+.afternoon {
   background: #66342b;
 }
-.noche {
+.evening {
   background: #444268;
 }
