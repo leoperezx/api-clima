@@ -8,7 +8,7 @@ const app = express()
 dotenv.config()
 
 async function getClima() {
-  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Medellin&appid=${process.env.OPEN_WEATHER_API_KEY}`)
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Medellin&units=metric&lang=es&appid=${process.env.OPEN_WEATHER_API_KEY}`)
   const data = await response.json()
 
   return data

@@ -8,3 +8,18 @@ body {
   text-align: center;
   margin-top: 100px;
 }
+
+.output {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.morning {
+  background: #b9933f;
+}
+.afternoon {
+  background: #66342b;
+}
+.evening {
+  background: #444268;
+}
