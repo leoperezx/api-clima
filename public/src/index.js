@@ -1,22 +1,22 @@
 async function getClima() {
-  const response = await fetch("/clima")
-  const data = await response.json()
+  const response = await fetch("/clima");
+  const data = await response.json();
 
-  return data
+  return data;
 }
 
-function getmonth(date) {
-  const hora = date.getHours();
-  const dia = date.getDate();
-  const mes = date.toLocaleString("es-co", { month: "long" });
-  const ano = date.getFullYear();
-  return [hora, dia, mes, ano];
+function getMonth(date) {
+  return {
+    hour: date.getHours(),
+    day: date.getDate(),
+    month: date.toLocaleString("es-co", { month: "long" }),
+    year: date.getFullYear(),
+  };
 }
-
 
 function saludo() {
   const dateObj = new Date();
-  const [hour, day, month, year] = getmonth(dateObj);
+  const { hour, day, month, year } = getMonth(dateObj);
 
   let mensajeDiaTardeNoche;
 
@@ -32,23 +32,25 @@ function saludo() {
   }
 
   document.querySelector(".greetings").innerText = mensajeDiaTardeNoche;
-  document.querySelector(".greetingWithDate").innerText = `Hoy es ${day} de ${month} de ${year}`;
+  document.querySelector(
+    ".greetingWithDate"
+  ).innerText = `Hoy es ${day} de ${month} de ${year}`;
   document.body.className = styleName;
-
 }
 
-getClima().then(data => {
+getClima().then((data) => {
+  const icon = data.weather[0].icon;
+  const imagenClima = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  const tempCelcius = data.main.temp.toFixed(2);
+  const climaMedellin = data.weather[0].main;
 
-  const icon = data.weather[0].icon
-  const imagenClima = `https://openweathermap.org/img/wn/${icon}@2x.png`
-  const tempCelcius = (data.main.temp).toFixed(2)
-  const climaMedellin = data.weather[0].main
-
-
-  document.querySelector(".temperatura").innerText = `Temperatura de Medellín es ${tempCelcius}`
-  document.querySelector(".clima").innerText = `El clima actual de Medellín es: ${climaMedellin}`
-  document.querySelector(".imagenClima img").src = imagenClima
-})
-
+  document.querySelector(
+    ".temperatura"
+  ).innerText = `Temperatura de Medellín es ${tempCelcius}`;
+  document.querySelector(
+    ".clima"
+  ).innerText = `El clima actual de Medellín es: ${climaMedellin}`;
+  document.querySelector(".imagenClima img").src = imagenClima;
+});
 
 saludo();
