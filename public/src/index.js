@@ -38,19 +38,32 @@ function saludo() {
   document.body.className = styleName;
 }
 
+
 getClima().then((data) => {
-  const icon = data.weather[0].icon;
-  const imagenClima = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-  const tempCelcius = data.main.temp.toFixed(2);
-  const climaMedellin = data.weather[0].main;
+  const { weather, temp, pressure, humidity } = data;
 
   document.querySelector(
     ".temperatura"
-  ).innerText = `Temperatura de Medellín es ${tempCelcius}`;
+  ).innerText = `Temperatura de Medellín es ${temp.temperature} grados Centígrados`;
   document.querySelector(
     ".clima"
-  ).innerText = `El clima actual de Medellín es: ${climaMedellin}`;
-  document.querySelector(".imagenClima img").src = imagenClima;
+  ).innerText = `El clima actual de Medellín es: ${weather.description}.`;
+  document.querySelector(".imagenClima img").src = weather.icon;
+  document.querySelector(
+    ".sensacion"
+  ).innerText = `Las sesancion termina es: ${temp.feels} grados centígrados.`;
+  document.querySelector(
+    ".tempMin"
+  ).innerText = `Mínima temperatuta es : ${temp.min} grados centígrados.`;
+  document.querySelector(
+    ".tempMax"
+  ).innerText = `Máxima temperatuta es : ${temp.max} grados centígrados.`;
+  document.querySelector(
+    ".tempMax"
+  ).innerText = `Presión atmosférica es : ${pressure} hPa.`;
+  document.querySelector(
+    ".humedad"
+  ).innerText = `Humedad realtiva es : ${humidity} %.`;
 });
 
 saludo();
