@@ -1,15 +1,15 @@
 const GREETS = {
   morning: {
-    message: "Buenos días",
-    className: "morning"
+    message: 'Buenos días',
+    className: 'morning'
   },
   afternoon: {
-    message: "Buenas tardes",
-    className: "afternoon"
+    message: 'Buenas tardes',
+    className: 'afternoon'
   },
   evening: {
-    message: "Buenas noches",
-    className: "evening"
+    message: 'Buenas noches',
+    className: 'evening'
   }
 }
 
@@ -47,8 +47,8 @@ function saludo() {
   const { hour, day, month, year } = getDate(new Date());
   const { message, className } = getGreet(hour)
 
-  document.querySelector(".greetings").innerText = message;
-  document.querySelector(".greetingWithDate").innerText = `Hoy es ${day} de ${month} de ${year}`;
+  document.querySelector('.greetings').innerText = message;
+  document.querySelector('.greetingWithDate').innerText = `Hoy es ${day} de ${month} de ${year}`;
   document.body.className = className;
 }
 
