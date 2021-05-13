@@ -24,10 +24,9 @@ async function getClima() {
 }
 
 function prepareApiData(data) {
-  const icono = data.weather[0].icon;
   return {
     weather: {
-      icon: `https://openweathermap.org/img/wn/${icono}@2x.png`,
+      icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
       description: data.weather[0].description,
     },
     temp: {

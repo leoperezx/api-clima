@@ -1,3 +1,18 @@
+const GREETS = {
+  morning: {
+    message: 'Buenos días',
+    className: 'morning'
+  },
+  afternoon: {
+    message: 'Buenas tardes',
+    className: 'afternoon'
+  },
+  evening: {
+    message: 'Buenas noches',
+    className: 'evening'
+  }
+}
+
 async function getClima() {
   const response = await fetch('/clima');
   const data = await response.json();
@@ -5,7 +20,7 @@ async function getClima() {
   return data;
 }
 
-function getMonth(date) {
+function getDate(date) {
   return {
     hour: date.getHours(),
     day: date.getDate(),
@@ -14,29 +29,27 @@ function getMonth(date) {
   };
 }
 
-function saludo() {
-  const dateObj = new Date();
-  const { hour, day, month, year } = getMonth(dateObj);
-
-  let mensajeDiaTardeNoche;
-  let styleName;
+function getGreet(hour) {
+  let greet
 
   if (hour < 13) {
-    mensajeDiaTardeNoche = 'Buenos días';
-    styleName = 'morning';
+    greet = 'morning'
   } else if (hour < 19) {
-    mensajeDiaTardeNoche = 'Buenas tardes';
-    styleName = 'afternoon';
+    greet = 'afternoon'
   } else if (hour < 24) {
-    mensajeDiaTardeNoche = 'Buenas noches';
-    styleName = 'evening';
+    greet = 'evening'
   }
 
-  document.querySelector('.greetings').innerText = mensajeDiaTardeNoche;
-  document.querySelector(
-    '.greetingWithDate'
-  ).innerText = `Hoy es ${day} de ${month} de ${year}`;
-  document.body.className = styleName;
+  return GREETS[greet]
+}
+
+function saludo() {
+  const { hour, day, month, year } = getDate(new Date());
+  const { message, className } = getGreet(hour)
+
+  document.querySelector('.greetings').innerText = message;
+  document.querySelector('.greetingWithDate').innerText = `Hoy es ${day} de ${month} de ${year}`;
+  document.body.className = className;
 }
 
 
