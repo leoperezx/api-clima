@@ -4,26 +4,21 @@ Después de realizar "mi primer servidor", con ayuda [@nosoycesaros](https://git
 
 ## Instalación
 
-1. Clonar el repositorio. 
-`$ git clone https://github.com/leoperezx/api-clima.git`
+### 1. `$ npm install`
+Instalar las dependencias del proyecto utizando npm.
 
-2. Ingresar a la capeta.
-`$ cd api-clima`
+### 2. Configurar `.env` file
 
-3. Instalar las dependencias del proyecto utizando npm.
-`$ npm install`
+* Renombrar archivo `example.env` a `.env`
+* Obtener una API key de [OpenWeather](https://openweathermap.org/)
+* Reemplazar la variable `OPEN_WEATHER_API_KEY` en el `.env` file
 
-4. Renombrar archivo `example.env` a `.env`
+### 3. `$ npm run prepare`
+Preparar los scripts necesarios para funcionar.
 
-5. Definir las variables de entorno en el archivo `.env`
+### 4. `$ npm start`
+Correr el proyecto.
 
-6. Correr el proyecto.
-`$ npm start`
-
-7. Si todo esta bien debe pararecer un mensaje en la terminal 
-`Servidor Web escuchando en el puerto 3000`
-
-8. Abril el navegador y poner en la dirección:
-`localhost:3000/`
+### 5. Ir a `localhost:3000/`
 
 Autor: [LeoPerez](https://www.instagram.com/leoperez.x/) and [nosoycesaros](https://github.com/nosoycesaros)
