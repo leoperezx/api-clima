@@ -3,10 +3,18 @@ import express from 'express'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import dotenv from 'dotenv'
+import nunjucks from 'nunjucks'
 
-dotenv.config()
+
 const app = express()
 const root = dirname(fileURLToPath(import.meta.url))
+
+dotenv.config()
+
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+});
 
 async function getClima() {
   const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Medellin&units=metric&lang=es&appid=${process.env.OPEN_WEATHER_API_KEY}`)
@@ -38,6 +46,10 @@ app.use(express.static(`${root}/public/`))
 app.listen('3000', () => {
   console.log('Servidor Web escuchando en el puerto 3000')
 })
+
+app.get('/', (req, res) => {
+  res.render('index.html');
+});
 
 app.get('/clima', (req, res) => {
   getClima().then(data => {
